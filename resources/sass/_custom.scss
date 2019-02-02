@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  color: #212529;
+  background-color: #ecf0f1;
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.bg-light {
+  background-color: white !important;
+}
+
+.info {
+  font-size: 0.75rem;
+  color: #989c9e;
+}
+
+.signs {
+  font-size: 0.9rem;
+  color: #989c9e;
+
+  :hover {
+    color: $primary;
+    cursor: pointer;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1rem;
+  a {
+    text-decoration: none;
+  }
+}
+
+.light-body {
+  color: #989c9e;
+}
+
+.channel-sidebar {
+  color: #989c9e;
+  font-size: 0.8rem;
+}
