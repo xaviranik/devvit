@@ -6,6 +6,9 @@ use App\Discussion;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Reply;
+use App\User;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\NewReplyAdded;
 
 class DiscussionsController extends Controller
 {
@@ -39,8 +42,9 @@ class DiscussionsController extends Controller
     public function show($slug)
     {
         $discussion = Discussion::where('slug', $slug)->first();
+        $best_answer = $discussion->replies()->where('best_answer', 1)->first();
 
-        return view('discussions.show')->with('discussion', $discussion);
+        return view('discussions.show')->with('discussion', $discussion)->with('best_answer', $best_answer);
     }
 
     public function reply($id)
@@ -51,11 +55,23 @@ class DiscussionsController extends Controller
             'content' => 'required'
         ]);
 
+        $discussion = Discussion::find($id);
+
         $reply = Reply::create([
             'user_id' => Auth::id(),
             'discussion_id' => $id,
             'content' => $request->content
         ]);
+
+        // Notifying other users about the reply
+        $watchers =  array();
+
+        foreach($discussion->watchers as $watcher)
+        {
+            array_push($watchers, User::find($watcher->user_id));
+        }
+
+        Notification::send($watchers, new \App\Notifications\NewReplyAdded($discussion));
 
         Session::flash('success', 'Repiled to discussion!');
         return redirect()->back();

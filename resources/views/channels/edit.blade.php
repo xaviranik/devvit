@@ -2,10 +2,13 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Edit channel {{ $channel->title }}</div>
+    <div class="row">
+        <div class="col-md-3">
+            @include('includes.sidebar')
+        </div>
+        <div class="col-md-8 py-4">
+            <div class="card shadow-sm mb-2">
+                <div class="card-header bg-light font-weight-light">Edit channel {{ $channel->title }}</div>
 
                 <div class="card-body">
                     <form action="{{ route('channels.update', ['channel' => $channel->id]) }}" method="POST">
@@ -18,7 +21,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-success btn-block" type="submit">
+                            <button class="btn btn-primary btn-block" type="submit">
                                 Update Channel
                             </button>
                         </div>

@@ -18,6 +18,15 @@ body {
 .info {
   font-size: 0.75rem;
   color: #989c9e;
+
+  a {
+    color: #989c9e;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $primary;
+  }
 }
 
 .signs {
@@ -27,6 +36,15 @@ body {
   :hover {
     color: $primary;
     cursor: pointer;
+  }
+
+  a {
+    color: #989c9e;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $primary;
   }
 }
 
@@ -38,11 +56,23 @@ body {
   }
 }
 
+
 .light-body {
   color: #989c9e;
 }
 
 .channel-sidebar {
-  color: #989c9e;
-  font-size: 0.8rem;
+  :hover {
+    border-left: 2px solid $primary;
+    font-weight: 500;
+    a {
+      color: $primary;
+      border-left: none;
+    }
+  }
+  a {
+    color: #989c9e;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
 }

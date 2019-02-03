@@ -10513,6 +10513,15 @@ body {
   color: #989c9e;
 }
 
+.info a {
+  color: #989c9e;
+  text-decoration: none;
+}
+
+.info a:hover {
+  color: #FC4A1A;
+}
+
 .signs {
   font-size: 0.9rem;
   color: #989c9e;
@@ -10521,6 +10530,15 @@ body {
 .signs :hover {
   color: #FC4A1A;
   cursor: pointer;
+}
+
+.signs a {
+  color: #989c9e;
+  text-decoration: none;
+}
+
+.signs a:hover {
+  color: #FC4A1A;
 }
 
 .title {
@@ -10536,8 +10554,19 @@ body {
   color: #989c9e;
 }
 
-.channel-sidebar {
+.channel-sidebar :hover {
+  border-left: 2px solid #FC4A1A;
+  font-weight: 500;
+}
+
+.channel-sidebar :hover a {
+  color: #FC4A1A;
+  border-left: none;
+}
+
+.channel-sidebar a {
   color: #989c9e;
   font-size: 0.8rem;
+  text-decoration: none;
 }
 

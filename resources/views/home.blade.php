@@ -17,7 +17,7 @@
                                         <div class="col-md-12">
                                             <img class="mb-2" src="{{ $discussion->user->avatar }}" alt="avatar" width="40px" height="40px">&nbsp;&nbsp;
                                             <span class="info">{{ $discussion->user->name }}</span>&nbsp;&nbsp;
-                                            <span class="info"><i class="fas fa-link"></i> {{ $discussion->channel->title }}</span>&nbsp;&nbsp;
+                                            <span class="info"><a href="{{ route('channel', ['slug' => $discussion->channel->slug]) }}"><i class="fas fa-link"></i> {{ $discussion->channel->title }}</a></span>&nbsp;&nbsp;
                                             <span class="info"><i class="far fa-clock"></i> {{ $discussion->created_at->diffForHumans() }}</span>
                                         </div>
 
@@ -34,15 +34,15 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-around">
-                                    <div class="">
-                                        <span class="signs"><i class="far fa-thumbs-up"></i> {{ $discussion->replies->count() }}</span>
+                                    <div class="comment">
+                                        <div class="signs">
+                                            <span><i class="far fa-comment-dots"></i> {{ $discussion->replies->count() }}</span>
+                                        </div>
                                     </div>
-                                    <div class="">
-                                        <span class="signs"><i class="far fa-comment-dots"></i> {{ $discussion->replies->count() }}</span>
-                                    </div>
-                                    
-                                    <div class="">
-                                        <span class="signs"><i class="far fa-share-square"></i> Share</span>
+                                    <div class="share">
+                                        <div class="signs">
+                                            <span><i class="far fa-share-square"></i> Share</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

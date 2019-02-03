@@ -12,7 +12,10 @@ class ChannelsTableSeeder extends Seeder
      */
     public function run()
     {
-        $channel_default = ['title' => 'Default Channel'];
+        $channel_default = [
+            'title' => 'Default Channel',
+            'slug' => str_slug('Default Channel')
+        ];
 
         Channel::create($channel_default);
     }

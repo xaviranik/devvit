@@ -2,9 +2,12 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8 py-4">
-            <div class="card">
+    <div class="row">
+        <div class="col-md-3">
+            @include('includes.sidebar')
+        </div>
+        <div class="col-md-9 py-4">
+            <div class="card shadow-sm mb-2">
                 <div class="card-header bg-light font-weight-light">Create a new channel</div>
 
                 <div class="card-body">
