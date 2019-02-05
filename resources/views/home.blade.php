@@ -29,7 +29,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="discussion-body light-body">
-                                    {{ str_limit($discussion->content, 400, '...') }}
+                                    {!! Markdown::convertToHtml(str_limit($discussion->content, 400, '...')) !!}
                                 </div>
                             </div>
                             <div class="card-footer">

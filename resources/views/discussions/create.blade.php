@@ -9,6 +9,9 @@
     
             <div class="col-md-9">
                 <div id="main" class="py-4">
+                    
+                    @include('includes.error')
+
                     <div class="card shadow-sm">
                         <div class="card-header bg-light font-weight-light">
                             Create a discussion
@@ -25,10 +28,10 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="title" placeholder="Give a title...">
+                                    <input class="form-control" type="text" name="title" value="{{ old('title') }}" placeholder="Give a title...">
                                 </div>
                                 <div class="form-group">
-                                    <textarea placeholder="Ask a question..." class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+                                    <textarea placeholder="Ask a question..." class="form-control" name="content" id="content" value="{{ old('content') }}" cols="30" rows="10"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-block" type="submit">Create Discussion</button>

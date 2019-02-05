@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-4 py-4">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-center">Login to your account</h3>
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h3 class="text-center font-weight-light">Login to your account</h3>
                 </div>
 
                 <div class="card-body">

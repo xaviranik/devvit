@@ -12,11 +12,35 @@ class ChannelsTableSeeder extends Seeder
      */
     public function run()
     {
-        $channel_default = [
-            'title' => 'Default Channel',
-            'slug' => str_slug('Default Channel')
+        $channel_1 = [
+            'title' => 'Java',
+            'slug' => str_slug('java')
         ];
 
-        Channel::create($channel_default);
+        $channel_2 = [
+            'title' => 'C#',
+            'slug' => str_slug('c#')
+        ];
+
+        $channel_3 = [
+            'title' => 'PHP',
+            'slug' => str_slug('php')
+        ];
+
+        $channel_4 = [
+            'title' => 'Python',
+            'slug' => str_slug('python')
+        ];
+
+        $channel_5 = [
+            'title' => 'Javascript',
+            'slug' => str_slug('javascript')
+        ];
+
+        Channel::create($channel_1);
+        Channel::create($channel_2);
+        Channel::create($channel_3);
+        Channel::create($channel_4);
+        Channel::create($channel_5);
     }
 }

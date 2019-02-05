@@ -6,7 +6,8 @@
         <div class="col-md-3">
             @include('includes.sidebar')
         </div>
-        <div class="col-md-8 py-4">
+        <div class="col-md-9 py-4">
+            @include('includes.error')
             <div class="card shadow-sm mb-2">
                 <div class="card-header bg-light font-weight-light">Edit channel {{ $channel->title }}</div>
 

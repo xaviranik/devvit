@@ -27,23 +27,24 @@
                                                 </span>
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item" href="#"><i class="far fa-edit"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i> Delete</a>
                                                     <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#"><i class="fas fa-times"></i> Close Discussion</a>
+                                                    <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i> Delete</a>
                                                 </div>
                                             </div>
                                         @endif
                                     </div>
                                     <div class="col-md-12">
-                                        <span class="title"><a href="{{ route('discussion', ['slug' => $discussion->slug]) }}">{{ $discussion->title }}</a></span>
+                                        <span class="title"><a href="{{ route('discussion', ['slug' => $discussion->slug]) }}">{{ $discussion->title }}</a></span>&nbsp;&nbsp;
+                                        
+                                        @if ($best_answer)
+                                            <span class="info text-success"><i class="fas fa-check-circle"></i> Solved</butspanton>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="discussion-body light-body">
-                                {{ $discussion->content }}
-                            </div>
+                            <div class="discussion-body light-body">{!! Markdown::convertToHtml($discussion->content) !!}</div>
 
                             {{-- Best answer --}}
                             @if ($best_answer)
@@ -165,7 +166,7 @@
                         
                                     <div class="row align-items-center">
                                         <div class="col-md-12">
-                                            <span class="light-body">{{ $reply->content }}</a></span>
+                                            <span class="light-body">{!! Markdown::convertToHtml($reply->content) !!}</a></span>
                                         </div>
                                     </div>
                                 </div>

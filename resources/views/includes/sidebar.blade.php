@@ -9,6 +9,11 @@
                 <li class="list-group-item">
                     <a href="{{ route('forum') }}">Forum</a>
                 </li>
+                @auth
+                    <li class="list-group-item">
+                        <a href="/forum?filter=my-discussions">My Discussions</a>
+                    </li>
+                @endauth
             </ul>
         </div>
         <div class="card shadow-sm">

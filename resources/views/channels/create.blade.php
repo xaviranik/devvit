@@ -7,6 +7,7 @@
             @include('includes.sidebar')
         </div>
         <div class="col-md-9 py-4">
+            @include('includes.error')
             <div class="card shadow-sm mb-2">
                 <div class="card-header bg-light font-weight-light">Create a new channel</div>
 
@@ -15,7 +16,7 @@
                         @csrf
 
                         <div class="form-group">
-                            <input type="text" name="title" class="form-control">
+                            <input type="text" name="title" value="{{ old('title') }}" class="form-control">
                         </div>
 
                         <div class="form-group">

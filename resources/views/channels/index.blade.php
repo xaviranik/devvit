@@ -6,9 +6,13 @@
         <div class="col-md-3">
             @include('includes.sidebar')
         </div>
-        <div class="col-md-8 py-4">
+        <div class="col-md-9 py-4">
             <div class="card shadow-sm mb-2">
-                <div class="card-header bg-light font-weight-light">Channels</div>
+                <div class="card-header bg-light font-weight-light">
+                    Manage Channels
+                    <a href="{{ route('channels.create') }}" class="btn btn-primary float-right">Create New Channel</a>
+                </div>
+                
 
                 <div class="card-body">
                     <table class="table table-hover">
@@ -25,8 +29,8 @@
                                         <form class="form-inline" action="{{ route('channels.destroy', ['channel' => $channel->id]) }}" method="POST">
                                             @csrf
                                             {{ method_field('DELETE') }}
-                                            <a class="btn btn-primary btn-sm mr-2" href="{{ route('channels.edit', ['channel' => $channel->id]) }}">Edit</a>
-                                            <button class="btn btn-outline-danger btn-sm" type="submit">Delete</button>
+                                            <a class="btn btn-primary btn-sm mr-2" href="{{ route('channels.edit', ['channel' => $channel->id]) }}"><i class="far fa-edit"></i></a>
+                                            <button class="btn btn-outline-danger btn-sm" type="submit"><i class="far fa-trash-alt"></i></button>
                                         </form>
                                     </td>
                                 </tr>

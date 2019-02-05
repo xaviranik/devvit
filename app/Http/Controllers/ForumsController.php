@@ -5,13 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Discussion;
 use App\Channel;
+use Illuminate\Support\Facades\Auth;
 
 class ForumsController extends Controller
 {
 
     public function index()
     {
-        $discussions = Discussion::orderBy('created_at', 'desc')->paginate(3);
+        switch(request('filter'))
+        {
+            case 'my-discussions':
+            {
+                $discussions = Discussion::where('user_id', Auth::id())->paginate(3);
+                break;
+            }
+            default:
+            {
+                $discussions = Discussion::orderBy('created_at', 'desc')->paginate(3);
+            }
+        }
+
         return view('home', ['discussions' => $discussions]);
     }
 
