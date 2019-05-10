@@ -32,7 +32,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"><i class="far fa-user"></i> Profile</a>
+                            <a class="dropdown-item" href="{{ route('profile.index') }}"><i class="far fa-user"></i> Profile</a>
                             @if (Auth::user()->admin)
                                 <a class="dropdown-item" href="{{ route('channels.index') }}"><i class="fas fa-tools"></i> Manage Channels</a>
                             @endif

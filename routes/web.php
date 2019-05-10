@@ -37,6 +37,9 @@ Route::group(['middleware' => 'auth'], function() {
     //Admin channel resource
     Route::resource('channels', 'ChannelsController');
 
+    //Profile
+    Route::resource('profile', 'ProfilesController');
+
     // Discussions with Auth
     Route::get('discussion/create/new', [
         'uses' => 'DiscussionsController@create',
