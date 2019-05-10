@@ -19,7 +19,21 @@
                                             <span class="info">{{ $discussion->user->name }}</span>&nbsp;&nbsp;
                                             <span class="info"><a href="{{ route('channel', ['slug' => $discussion->channel->slug]) }}"><i class="fas fa-link"></i> {{ $discussion->channel->title }}</a></span>&nbsp;&nbsp;
                                             <span class="info"><i class="far fa-clock"></i> {{ $discussion->created_at->diffForHumans() }}</span>
+
+                                            @if ($discussion->user_id == Auth::id())
+                                                <div class="dropleft float-right">
+                                                    <span class="info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </span>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#"><i class="far fa-edit"></i> Edit</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i> Delete</a>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </div>
+                                        
 
                                         <div class="col-md-12">
                                             <span class="title"><a href="{{ route('discussion', ['slug' => $discussion->slug]) }}">{{ $discussion->title }}</a></span>

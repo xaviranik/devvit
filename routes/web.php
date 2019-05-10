@@ -34,7 +34,7 @@ Route::get('channel/{slug}', [
 
 Route::group(['middleware' => 'auth'], function() {
 
-    // Channels
+    //Admin channel resource
     Route::resource('channels', 'ChannelsController');
 
     // Discussions with Auth

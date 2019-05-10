@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="{{ asset('images/logo/devvit.png') }}" alt="" width="90px" height="40px">
+            <img src="{{ asset('images/logo/devvit.png') }}" alt="" width="120px" height="40px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -18,11 +18,11 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}"><button class="btn btn-outline-primary btn-md" type="">Login</button></a>
+                        <a class="nav-link" href="{{ route('login') }}"><button class="btn btn-outline-primary btn-md" type=""><i class="fas fa-sign-in-alt"></i> Login</button></a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}"><button class="btn btn-primary btn-md" id="signup-btn" type="">Sign Up</button></a>
+                            <a class="nav-link" href="{{ route('register') }}"><button class="btn btn-primary btn-md" id="signup-btn" type=""><i class="fas fa-user-plus"></i> Sign Up</button></a>
                         </li>
                     @endif
                 @else

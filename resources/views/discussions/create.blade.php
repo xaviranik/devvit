@@ -31,7 +31,7 @@
                                     <input class="form-control" type="text" name="title" value="{{ old('title') }}" placeholder="Give a title...">
                                 </div>
                                 <div class="form-group">
-                                    <textarea placeholder="Ask a question..." class="form-control" name="content" id="content" value="{{ old('content') }}" cols="30" rows="10"></textarea>
+                                    <textarea placeholder="Ask a question or start a discussion..." class="form-control" name="content" id="content" value="{{ old('content') }}" cols="30" rows="10"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-block" type="submit">Create Discussion</button>
