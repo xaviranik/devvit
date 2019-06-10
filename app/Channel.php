@@ -14,4 +14,14 @@ class Channel extends Model
     {
         return $this->hasMany('App\Discussion');
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($channel)
+        {
+            $channel->discussions()->delete();
+        });
+    }
 }
